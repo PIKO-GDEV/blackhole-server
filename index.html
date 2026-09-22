@@ -175,76 +175,6 @@
       background: #f0f0f0;
     }
 
-    section {
-      padding: 90px 0;
-      position: relative;
-    }
-
-    .section-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 50px;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #fff, transparent);
-      margin: 14px auto 0;
-    }
-
-    .rules-list {
-      max-width: 700px;
-      margin: 0 auto;
-      list-style: none;
-    }
-
-    .rules-list li {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px 24px;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      transition: all 0.3s ease;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .rules-list li.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .rules-list li:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.2);
-    }
-
-    .rule-number {
-      background: #fff;
-      color: #000;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-
-    .rule-text {
-      padding-top: 4px;
-    }
-
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -286,7 +216,7 @@
   <header>
     <div class="logo-wrapper">
       <div class="logo-ring"></div>
-      <img src="blackhole-logo.jpg.jpg" alt="الثقب الأسود" class="logo">
+      <img src="https://images.unsplash.com/photo-1462331940025-496dfbfcba31?w=500&h=500&fit=crop" alt="الثقب الأسود" class="logo">
     </div>
 
     <h1>الثقب الأسود</h1>
@@ -303,52 +233,8 @@
     </a>
   </header>
 
-  <section>
-    <div class="container">
-      <h2 class="section-title">القوانين</h2>
-      <ul class="rules-list" id="rules">
-        <li>
-          <span class="rule-number">1</span>
-          <span class="rule-text">احترم الجميع. ممنوع الإهانة أو التنمر بأي شكل.</span>
-        </li>
-        <li>
-          <span class="rule-number">2</span>
-          <span class="rule-text">ممنوع السبام أو الإعلانات العشوائية بدون إذن الإدارة.</span>
-        </li>
-        <li>
-          <span class="rule-number">3</span>
-          <span class="rule-text">النقاشات التقنية مرحب بها، لكن ابتعد عن المواضيع المسيئة أو غير اللائقة.</span>
-        </li>
-        <li>
-          <span class="rule-number">4</span>
-          <span class="rule-text">شارك معرفتك وساعد الآخرين قدر الإمكان.</span>
-        </li>
-        <li>
-          <span class="rule-number">5</span>
-          <span class="rule-text">التزم بقوانين ديسكورد العامة. أي مخالفة تعرضك للعقوبة.</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <footer>
     <p>© 2026 الثقب الأسود — مجتمع المطورين</p>
   </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 120);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.rules-list li').forEach(li => {
-      observer.observe(li);
-    });
-  </script>
 </body>
 </html>
